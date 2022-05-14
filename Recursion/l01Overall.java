@@ -168,9 +168,10 @@ public class l01Overall {
     }
 
     public static void main(String[] args) {
-        // System.out.println(mazePath(0, 0, 2, 2, ""));
+      //  System.out.println(mazePath(0, 0, 2, 2, ""));
         int[][] dir = { { 0, 1 }, { 1, 0 }, { 1, 1 } };
         String[] dirS = { "h", "v", "d" };
-        System.out.println(mazePath2(0, 0, 2, 2, dir, dirS, ""));
+        //System.out.println(mazePath2(0, 0, 2, 2, dir, dirS, ""));
+        System.out.println(mazePathJump(0, 0, 2, 2, dir, dirS, ""));
     }
 }
