@@ -27,7 +27,8 @@ public:
         vector<int> phash(26, 0);
         int window = p.size();
         int len = s.size();
-        if (len < window)
+        if (len
+        
             return ans;
         int left = 0, right = 0;
         while (right < window)
