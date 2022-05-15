@@ -35,8 +35,11 @@ public class l05RecursionTree {
         }
         int count = 0;
         for (int i = 0; i < coins.length; i++) {
-            if (tar - coins[i] >= 0) {
-                count += coinchangepermutation_SIn(coins, tar - coins[i], psf + coins[i] + " ");
+            if (coins[i]>0 && tar - coins[i] >= 0) {
+                int val = coins[i];
+                coins[i] = - coins[i];
+                count += coinchangepermutation_SIn(coins, tar - val, psf + val + " ");
+                coins[i] = -coins[i];
             }
         }
         return count;
