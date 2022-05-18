@@ -13,35 +13,30 @@ TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(rig
 /********************************** Boiler Plate End  ***********************************************************/
 
 // Main code Start Here
-
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        
-        // Iterative approach
-        
-
-        if(head==NULL) return NULL;
-        ListNode *p = NULL, *c = head, *n = head->next;
-        while(c!=NULL){
-           c->next = p;
-           p = c;
-            c = n;
-          if(n!=NULL)  n = n->next;
-            
-        } 
-        return p;
-      /*  
-        // recursion Approach
-         if(head==NULL || head->next==NULL)
+    ListNode* deleteDuplicates(ListNode* head) {
+         if(head==NULL || head->next==NULL) return head;
+        ListNode* newhead = deleteDuplicates(head->next);
+        if(head->val==newhead->val) return newhead;
+        else{
+            head->next = newhead;
             return head;
-        ListNode* newHead = reverseList(head->next);
-        head->next->next = head;
-        head->next =NULL;
-        return newHead;
-       */ 
+        }
         
+        /*
+        // Second Approach
+       
+        while(temp->next!=NULL){
+if(temp->val==temp->next->val){
+    temp->next = temp->next->next;
+}else{
+    temp = temp->next;
+}
+        }
+        return head;
         
+        */
     }
 };
 int main () {
