@@ -52,11 +52,11 @@ string printlcs(string x , string y, int n, int m){
     }
     reverse(lcs.begin(), lcs.end());
     return lcs;
-}
-
-
-
 };
+
+
+
+
 int main () {
 
     string X, Y;
