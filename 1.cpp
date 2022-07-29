@@ -19,8 +19,16 @@ TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(rig
 };
 
 
+void solve(int arr[], int n){
+
+
+}
 int main () {
+
+
 int prices[] = {7, 1, 5, 3, 6, 4};
 int n = sizeof(prices) / sizeof(prices[0]);
+
+
  return 0;
 }
