@@ -19,16 +19,19 @@ TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(rig
 };
 
 
-void solve(int arr[], int n){
-
-
+int recursiveknapsack(int wt[], int val[], int w, int n){
+    if(n==0 || w==0) return 0;
+    if(wt[n-1]<=w)
+        return max(val[n - 1] + recursiveknapsack(wt, val, w - wt[n - 1], n - 1), recursiveknapsack(wt, val, w , n - 1));
+    else if(wt[n-1]>w)
+        return recursiveknapsack(wt, val, w, n - 1);
+    else return -1;
 }
 int main () {
-
-
-int prices[] = {7, 1, 5, 3, 6, 4};
-int n = sizeof(prices) / sizeof(prices[0]);
-
-
- return 0;
+    int val[] = {60, 100, 120};
+    int wt[] = {10, 20, 30};
+    int W = 50;
+    int n = sizeof(val) / sizeof(val[0]);
+    cout << recursiveknapsack(wt, val, W, n);
+    return 0;
 }

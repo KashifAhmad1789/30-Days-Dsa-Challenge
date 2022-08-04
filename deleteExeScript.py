@@ -1,6 +1,6 @@
 import os
 
-dir_path = r'D:\Coding Practice'
+dir_path = r'F:\30 Days Dsa Challenge'
 file_extenstion = '.exe' 
 for root, _, files in os.walk(dir_path):
     for file in files: 
